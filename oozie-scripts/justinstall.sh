@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export ${DEST_DIR}=${INSTALL_DIR}/opt
+export DEST_DIR=${INSTALL_DIR}/opt
 mkdir -p --mode=0755 ${DEST_DIR}
 cd ${DEST_DIR}
 tar -xvzpf ${WORKSPACE}/oozie/distro/target/oozie-${ARTIFACT_VERSION}-distro/oozie-${ARTIFACT_VERSION}/oozie-client-${ARTIFACT_VERSION}.tar.gz
