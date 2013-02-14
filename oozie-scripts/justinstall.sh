@@ -31,6 +31,7 @@ opt
 
 rm -rf ${DEST_DIR}
 mkdir -p --mode=0755 ${DEST_DIR}
+cd ${DEST_DIR}
 tar -xvzpf ${WORKSPACE}/oozie/distro/target/oozie-${ARTIFACT_VERSION}-distro.tar.gz
 
 export RPM_NAME=vcc-oozie-server-${ARTIFACT_VERSION}
