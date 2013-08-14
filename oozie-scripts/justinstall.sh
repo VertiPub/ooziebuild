@@ -8,7 +8,7 @@ export OPT_ROOT=${DEST_DIR}/opt/oozie-${ARTIFACT_VERSION}
 mkdir -p -m 0775 ${OPT_ROOT}/libext
 cd ${OPT_ROOT}/libext
 wget http://s3-us-west-1.amazonaws.com/verticloud-dependencies/ext-2.2.zip
-EXTSUM = sha1sum ext-2.2.zip | awk '{print $1}'
+EXTSUM=`sha1sum ext-2.2.zip | awk '{print $1}'`
 if [ "${EXTSUM}" != "a949ddf3528bc7013b21b13922cc516955a70c1b" ]; then
   echo "FATAL: Filed to fetch the correct ext-2.2.zip"
 fi
