@@ -56,8 +56,8 @@ export RPM_VERSION=0.2.0
 cd ${RPM_DIR}
 
 fpm --verbose \
--C ${DEST_DIR}
---prefix /opt
+-C ${DEST_DIR} \
+--prefix /opt \
 --maintainer ops@altiscale.com \
 --vendor Altiscale \
 --provides ${RPM_NAME} \
