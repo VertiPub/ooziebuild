@@ -15,8 +15,8 @@ export RPM_VERSION=0.2.0
 cd ${RPM_DIR}
 
 fpm --verbose \
---maintainer ops@verticloud.com \
---vendor VertiCloud \
+--maintainer ops@altiscale.com \
+--vendor Altiscale \
 --provides ${RPM_NAME} \
 -s dir \
 -t rpm \
@@ -49,7 +49,6 @@ cp libtools/commons-cli-* libext
 cd ${OOZIE_ROOT}/conf
 rm -rf hadoop-conf
 ln -s /etc/hadoop hadoop-conf
-chown -R oozie.hadoop ${OOZIE_ROOT}
 
 export RPM_NAME=vcc-oozie-server-${ARTIFACT_VERSION}
 export RPM_VERSION=0.2.0
@@ -57,8 +56,8 @@ export RPM_VERSION=0.2.0
 cd ${RPM_DIR}
 
 fpm --verbose \
---maintainer ops@verticloud.com \
---vendor VertiCloud \
+--maintainer ops@altiscale.com \
+--vendor Altiscale \
 --provides ${RPM_NAME} \
 -s dir \
 -t rpm \
@@ -66,8 +65,8 @@ fpm --verbose \
 -v ${RPM_VERSION} \
 --description "${DESCRIPTION}" \
 --iteration ${DATE_STRING} \
---rpm-user root \
---rpm-group root \
+--rpm-user oozie \
+--rpm-group hadoop \
 -C ${INSTALL_DIR} \
 opt
 
