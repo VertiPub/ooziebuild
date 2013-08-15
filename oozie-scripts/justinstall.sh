@@ -65,8 +65,8 @@ fpm --verbose \
 -v ${RPM_VERSION} \
 --description "${DESCRIPTION}" \
 --iteration ${DATE_STRING} \
---rpm-user root \
---rpm-group root \
+--rpm-user oozie \
+--rpm-group hadoop \
 -C ${INSTALL_DIR} \
 opt
 
