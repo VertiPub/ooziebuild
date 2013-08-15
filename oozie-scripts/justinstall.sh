@@ -53,10 +53,11 @@ ln -s /etc/hadoop hadoop-conf
 export RPM_NAME=vcc-oozie-server-${ARTIFACT_VERSION}
 export RPM_VERSION=0.2.0
 
-cd ${RPM_DIR}/opt
+cd ${RPM_DIR}
 
 fpm --verbose \
---prefix /opt
+-C ${DEST_DIR} \
+--prefix /opt \
 --maintainer ops@altiscale.com \
 --vendor Altiscale \
 --provides ${RPM_NAME} \
@@ -69,6 +70,5 @@ fpm --verbose \
 --iteration ${DATE_STRING} \
 --rpm-user oozie \
 --rpm-group hadoop \
--C ${INSTALL_DIR} \
 oozie-${ARTIFACT_VERSION}
 
