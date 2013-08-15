@@ -49,6 +49,7 @@ cp libtools/commons-cli-* libext
 cd ${OOZIE_ROOT}/conf
 rm -rf hadoop-conf
 ln -s /etc/hadoop hadoop-conf
+chown -R oozie.hadoop ${OOZIE_ROOT}
 
 export RPM_NAME=vcc-oozie-server-${ARTIFACT_VERSION}
 export RPM_VERSION=0.2.0
@@ -65,8 +66,8 @@ fpm --verbose \
 -v ${RPM_VERSION} \
 --description "${DESCRIPTION}" \
 --iteration ${DATE_STRING} \
---rpm-user oozie \
---rpm-group hadoop \
+--rpm-user root \
+--rpm-group root \
 -C ${INSTALL_DIR} \
 opt
 
