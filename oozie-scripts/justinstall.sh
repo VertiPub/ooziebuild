@@ -70,6 +70,5 @@ fpm --verbose \
 --iteration ${DATE_STRING} \
 --rpm-user oozie \
 --rpm-group hadoop \
--C ${INSTALL_DIR} \
 oozie-${ARTIFACT_VERSION}
 
