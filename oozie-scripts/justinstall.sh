@@ -51,7 +51,7 @@ rm -rf hadoop-conf
 ln -s /etc/hadoop hadoop-conf
 
 cd ${INSTALL_DIR}
-find opt -type d -print | awk '{print "/" $1}' > /tmp/$$.files
+find opt/oozie-${ARTIFACT_VERSION} -type d -print | awk '{print "/" $1}' > /tmp/$$.files
 export DIRECTORIES=""
 for i in `cat /tmp/$$.files`; do DIRECTORIES="--directories $i ${DIRECTORIES} "; done
 export DIRECTORIES
