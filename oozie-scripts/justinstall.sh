@@ -50,14 +50,20 @@ cd ${OOZIE_ROOT}/conf
 rm -rf hadoop-conf
 ln -s /etc/hadoop hadoop-conf
 
+cd ${INSTALL_DIR}
+find opt/oozie-${ARTIFACT_VERSION} -type d -print | awk '{print "/" $1}' > /tmp/$$.files
+export DIRECTORIES=""
+for i in `cat /tmp/$$.files`; do DIRECTORIES="--directories $i ${DIRECTORIES} "; done
+export DIRECTORIES
+rm -f /tmp/$$.files
+
 export RPM_NAME=vcc-oozie-server-${ARTIFACT_VERSION}
 export RPM_VERSION=0.2.0
 
 cd ${RPM_DIR}
 
 fpm --verbose \
--C ${DEST_DIR} \
---prefix /opt \
+-C ${INSTALL_DIR} \
 --maintainer ops@altiscale.com \
 --vendor Altiscale \
 --provides ${RPM_NAME} \
@@ -65,10 +71,9 @@ fpm --verbose \
 -t rpm \
 -n ${RPM_NAME} \
 -v ${RPM_VERSION} \
---directories \
+${DIRECTORIES} \
 --description "${DESCRIPTION}" \
 --iteration ${DATE_STRING} \
 --rpm-user oozie \
 --rpm-group hadoop \
-oozie-${ARTIFACT_VERSION}
-
+opt
