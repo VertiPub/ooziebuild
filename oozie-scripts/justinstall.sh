@@ -63,7 +63,7 @@ export RPM_VERSION=0.2.0
 cd ${RPM_DIR}
 
 fpm --verbose \
---C ${INSTALL_DIR} \
+-C ${INSTALL_DIR} \
 --maintainer ops@altiscale.com \
 --vendor Altiscale \
 --provides ${RPM_NAME} \
