@@ -63,8 +63,7 @@ export RPM_VERSION=0.2.0
 cd ${RPM_DIR}
 
 fpm --verbose \
--C ${DEST_DIR} \
---prefix /opt \
+--C ${INSTALL_DIR} \
 --maintainer ops@altiscale.com \
 --vendor Altiscale \
 --provides ${RPM_NAME} \
@@ -77,5 +76,4 @@ ${DIRECTORIES} \
 --iteration ${DATE_STRING} \
 --rpm-user oozie \
 --rpm-group hadoop \
-oozie-${ARTIFACT_VERSION}
-
+opt
