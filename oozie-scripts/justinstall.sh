@@ -50,7 +50,7 @@ cd ${OOZIE_ROOT}/conf
 rm -rf hadoop-conf
 ln -s /etc/hadoop hadoop-conf
 
-cd ${DEST_DIR}
+cd ${INSTALL_DIR}
 find opt -type d -print | awk '{print "/" $1}' > /tmp/$$.files
 export DIRECTORIES=""
 for i in `cat /tmp/$$.files`; do DIRECTORIES="--directories $i ${DIRECTORIES} "; done
