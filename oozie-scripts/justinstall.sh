@@ -50,6 +50,9 @@ cd ${OOZIE_ROOT}/conf
 rm -rf hadoop-conf
 ln -s /etc/hadoop hadoop-conf
 
+cd ${OOZIE_ROOT}/bin
+./oozie-setup.sh
+
 cd ${INSTALL_DIR}
 find opt/oozie-${ARTIFACT_VERSION} -type d -print | awk '{print "/" $1}' > /tmp/$$.files
 export DIRECTORIES=""
