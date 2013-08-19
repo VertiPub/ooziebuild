@@ -70,6 +70,7 @@ fpm --verbose \
 --maintainer ops@altiscale.com \
 --vendor Altiscale \
 --provides ${RPM_NAME} \
+--depends alti-mysql-connector \
 -s dir \
 -t rpm \
 -n ${RPM_NAME} \
