@@ -49,6 +49,8 @@ cp libtools/commons-cli-* libext
 cd ${OOZIE_ROOT}/conf
 rm -rf hadoop-conf
 ln -s /etc/hadoop hadoop-conf
+cd ${OOZIE_ROOT}/libtools
+ln -s /opt/mysql-connector/mysql-connector.jar mysql-connector.jar
 
 cd ${OOZIE_ROOT}/bin
 ./oozie-setup.sh
