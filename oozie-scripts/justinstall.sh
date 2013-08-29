@@ -54,9 +54,6 @@ ln -s /opt/mysql-connector/mysql-connector.jar mysql-connector.jar
 cd ${OOZIE_ROOT}/oozie-server/lib
 ln -s /opt/mysql-connector/mysql-connector.jar mysql-connector.jar
 
-cd ${OOZIE_ROOT}/bin
-./oozie-setup.sh
-
 cd ${INSTALL_DIR}
 find opt/oozie-${ARTIFACT_VERSION} -type d -print | awk '{print "/" $1}' > /tmp/$$.files
 export DIRECTORIES=""
