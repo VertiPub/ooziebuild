@@ -43,9 +43,6 @@ EXTSUM=`sha1sum ext-2.2.zip | awk '{print $1}'`
 if [ "${EXTSUM}" != "a949ddf3528bc7013b21b13922cc516955a70c1b" ]; then
   echo "FATAL: Filed to fetch the correct ext-2.2.zip"
 fi
-cd ${OOZIE_ROOT}
-cp libtools/hadoop-* libext
-cp libtools/commons-cli-* libext
 cd ${OOZIE_ROOT}/conf
 rm -rf hadoop-conf
 ln -s /etc/hadoop hadoop-conf
@@ -53,9 +50,6 @@ cd ${OOZIE_ROOT}/libtools
 ln -s /opt/mysql-connector/mysql-connector.jar mysql-connector.jar
 cd ${OOZIE_ROOT}/oozie-server/lib
 ln -s /opt/mysql-connector/mysql-connector.jar mysql-connector.jar
-
-cd ${OOZIE_ROOT}/bin
-./oozie-setup.sh
 
 cd ${INSTALL_DIR}
 find opt/oozie-${ARTIFACT_VERSION} -type d -print | awk '{print "/" $1}' > /tmp/$$.files
