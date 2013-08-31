@@ -9,7 +9,7 @@ tar -xvzpf ${WORKSPACE}/oozie/distro/target/oozie-${ARTIFACT_VERSION}-distro/ooz
 
 export RPM_NAME=vcc-oozie-client-${ARTIFACT_VERSION}
 
-#bumped after wb-1147
+# bumped after wb-1147
 export RPM_VERSION=0.2.0
 
 cd ${RPM_DIR}
@@ -50,6 +50,9 @@ cd ${OOZIE_ROOT}/libtools
 ln -s /opt/mysql-connector/mysql-connector.jar mysql-connector.jar
 cd ${OOZIE_ROOT}/oozie-server/lib
 ln -s /opt/mysql-connector/mysql-connector.jar mysql-connector.jar
+cd ${OOZIE_ROOT}/bin
+cp ${WORKSPACE}/oozie-scripts/pkgadd/oozie-status.sh .
+chmod 755 oozie-status.sh
 
 cd ${INSTALL_DIR}
 find opt/oozie-${ARTIFACT_VERSION} -type d -print | awk '{print "/" $1}' > /tmp/$$.files
