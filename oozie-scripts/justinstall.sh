@@ -10,7 +10,7 @@ tar -xvzpf ${WORKSPACE}/oozie/distro/target/oozie-${ARTIFACT_VERSION}-distro/ooz
 export RPM_NAME=vcc-oozie-client-${ARTIFACT_VERSION}
 
 # bumped after wb-1147
-export RPM_VERSION=0.2.0
+export RPM_VERSION=2.0.5
 
 cd ${RPM_DIR}
 
