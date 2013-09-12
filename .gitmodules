@@ -1,0 +1,3 @@
+[submodule "oozie"]
+	path = oozie
+	url = git@github.com:VertiPub/oozie.git
