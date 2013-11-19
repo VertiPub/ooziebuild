@@ -51,7 +51,7 @@ ln -s /opt/mysql-connector/mysql-connector.jar mysql-connector.jar
 cd ${OOZIE_ROOT}/oozie-server/lib
 ln -s /opt/mysql-connector/mysql-connector.jar mysql-connector.jar
 cd ${OOZIE_ROOT}/bin
-cp ${WORKSPACE}/oozie-scripts/pkgadd/oozie-status.sh .
+cp ${WORKSPACE}/scripts/pkgadd/oozie-status.sh .
 chmod 755 oozie-status.sh
 
 cd ${INSTALL_DIR}
