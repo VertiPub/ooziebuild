@@ -1,6 +1,7 @@
 #!/bin/sh
 # this is going to be problematic for oozie, since we've already released RPMs which are 2.0.5
-ALTISCALE_RELEASE=${ALTISCALE_RELEASE:-0.1.0}
+# this default is different than all the others so that the script doesn't cause things to break when merged.
+ALTISCALE_RELEASE=${ALTISCALE_RELEASE:-2.0.5}
 
 
 export DEST_DIR=${INSTALL_DIR}/opt
