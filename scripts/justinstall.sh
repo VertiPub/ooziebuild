@@ -1,4 +1,8 @@
 #!/bin/sh
+# this is going to be problematic for oozie, since we've already released RPMs which are 2.0.5
+# this default is different than all the others so that the script doesn't cause things to break when merged.
+ALTISCALE_RELEASE=${ALTISCALE_RELEASE:-2.0.5}
+
 
 export DEST_DIR=${INSTALL_DIR}/opt
 mkdir -p --mode=0755 ${DEST_DIR}
@@ -9,9 +13,6 @@ tar -xvzpf ${WORKSPACE}/oozie/distro/target/oozie-${ARTIFACT_VERSION}-distro/ooz
 
 export RPM_NAME=vcc-oozie-client-${ARTIFACT_VERSION}
 
-# bumped after ops-2111
-export RPM_VERSION=2.0.5
-
 cd ${RPM_DIR}
 
 fpm --verbose \
@@ -21,7 +22,7 @@ fpm --verbose \
 -s dir \
 -t rpm \
 -n ${RPM_NAME} \
--v ${RPM_VERSION} \
+-v ${ALTISCALE_RELEASE} \
 --description "${DESCRIPTION}" \
 --iteration ${DATE_STRING} \
 --rpm-user root \
@@ -74,7 +75,7 @@ fpm --verbose \
 -s dir \
 -t rpm \
 -n ${RPM_NAME} \
--v ${RPM_VERSION} \
+-v ${ALTISCALE_RELEASE} \
 ${DIRECTORIES} \
 --description "${DESCRIPTION}" \
 --iteration ${DATE_STRING} \
