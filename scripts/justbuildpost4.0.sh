@@ -13,4 +13,4 @@ echo "<settings></settings>" > ${WORKSPACE}/.m2/settings.xml
 #sed -e s/assembly\:single/assembly\:single\ \$\{MVN_LOCAL\}/ < bin/mkdistro.sh > ${WORKSPACE}/scripts/mkdistro.sh
 #mv ${WORKSPACE}/scripts/mkdistro.sh bin/mkdistro.sh
 #/bin/sh -ex bin/mkdistro.sh
-mvn package assembly:single -Dmaven.repo.local=${WORKSPACE}/.m2 --settings=${WORKSPACE}/.m2/settings.xml -DskipTests=true -Phadoop-2
+mvn package assembly:single -DskipTests=true -Phadoop-2 -DjavaVersion=1.7 -DtargetJavaVersion=1.6 -Dhadoop.version=2.4.0
