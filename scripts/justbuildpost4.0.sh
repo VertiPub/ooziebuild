@@ -13,4 +13,4 @@ echo "<settings></settings>" > ${WORKSPACE}/.m2/settings.xml
 #sed -e s/assembly\:single/assembly\:single\ \$\{MVN_LOCAL\}/ < bin/mkdistro.sh > ${WORKSPACE}/scripts/mkdistro.sh
 #mv ${WORKSPACE}/scripts/mkdistro.sh bin/mkdistro.sh
 #/bin/sh -ex bin/mkdistro.sh
-mvn package assembly:single -DskipTests=true -Phadoop-2 -Dhadoop.version=2.4.0 -Dpig.version=0.12.1 -Dhive.version=0.13.0
+mvn package assembly:single versions:set -DnewVersion=${ARTIFACT_VERSION} -DskipTests=true -Phadoop-2 -Dhadoop.version=2.4.0 -Dpig.version=0.12.1 -Dhive.version=0.13.0 
