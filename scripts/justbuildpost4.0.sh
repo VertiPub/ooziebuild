@@ -1,5 +1,5 @@
 #!/bin/sh -ex
-if [ [ -z ${HADOOP_VERSION} ] || [ -z ${PIG_VERSION} ] || [ -z ${HIVE_VERSION} ]; then
+if [[ -z "$HADOOP_VERSION"  ||  -z "$PIG_VERSION" || -z "$HIVE_VERSION" ]]; then
    echo "HADOOP_VERSION, PIG_VERSION and HIVE_VERSION must be explicitly set in the environment"
    exit 1
 fi
